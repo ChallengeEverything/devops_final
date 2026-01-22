@@ -10,7 +10,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-  
+
   db:
     image: postgres:13
     environment:
@@ -24,6 +24,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  
-  volumes:
-    postgres_data:
+
+volumes:
+  postgres_data:
