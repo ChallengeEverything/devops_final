@@ -2,17 +2,17 @@ version: "3.8"
 
 services:
   web:
-  build: .
-  ports:
-    - "8000:8000"
-  environment:
-    DATABASE_URL: postgresql://user:secret@db:5432/cat_app
-  depends_on:
-    db:
-      condition: service_healthy
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://user:secret@db:5432/cat_app
+    depends_on:
+      db:
+        condition: service_healthy
   
   db:
-    image: postgresql:13
+    image: postgres:13
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: secret
